@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        
+    </body>
+    <script>
+
+
+        const removeFromArray = function() {
+            
+            let numberOfArgs = arguments.length;
+                
+            let argArray = Array.from(arguments);
+            let testArray = argArray[0];
+               
+            argArray.reverse();
+            argArray.pop();
+            argArray.reverse();
+               
+            let ifErrorArray = 1;
+
+                
+            let isItemIncluded = function(item){
+                if (testArray.includes(item)){
+                    return testArray.includes(item);   
+
+                } else {
+                    ifErrorArray = 0;
+                    return ifErrorArray;
+                }
+            }
+            filteredArray = argArray.filter(isItemIncluded);
+
+            while (ifErrorArray == 0){
+                let removeFromArray = testArray;
+                return removeFromArray;
+            };
+
+
+            let i = 0;
+
+            
+            while (ifErrorArray == 1 && i != argArray.length){
+
+                for(i=0;i<argArray.length;i++){
+
+                    if (argArray.length == 1){
+                        //Create a new array containing the arguments         expect:[3]
+                        let newArray = argArray;
+                        // Create a new array containing the test array       expect:[1,2,3,4]
+                        let indexArray = testArray;
+                        //create the variable index to house the index of the arg value within the test array 
+                        // Where is argArray[0] within testArray              expect:2
+                        let index = testArray.indexOf(argArray[0]);
+                        //Use the value of index as a pointer to the element to remove from testArray 
+                        // return a new array containing the removed item     expect:[3]
+                        let removedItem = testArray.splice(index,1); 
+
+                        let finalResultArray =function(item){
+                            if (item != removedItem){
+                                return true
+                            };
+                            
+                            
+                            };
+                        let newFilteredArray = testArray.filter(finalResultArray);
+
+
+
+                        let removeFromArray = newFilteredArray;
+                        console.log(removeFromArray);
+
+                    } else if (argArray.length == 2){
+                        let newArray = arguments[0];
+                        let removeFromArray = newArray.splice(arguments[1]-1,1); 
+                        removeFromArray = newArray.splice(arguments[2]-1,1); 
+                        removeFromArray = newArray;
+                        console.log(removeFromArray);
+                        
+                    } else console.log(removeFromArray = "Logic Error");
+
+                };
+            }
+
+    };
+        removeFromArray([1,2,3,4],3);
+    </script>
+</html>
