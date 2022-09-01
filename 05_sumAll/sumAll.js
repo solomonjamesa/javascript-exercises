@@ -8,7 +8,32 @@
 //Return the sumOfAllNumbers
 
 const sumAll = function() {
-    
+    let argArray =  Array.from(arguments); 
+    function checkType(item) {
+        typeOfElement = typeof(item)
+        return typeOfElement;
+    };
+    let typeResult = argArray.filter(checkType);
+    function checkTypeResult(item){
+        if( item == "number") {
+            return
+        } else {
+            let sumAll = "ERROR";
+            return sumAll;
+        };
+    };
+    let typeComparison = typeResult.filter(checkTypeResult);
+    function checkPositiveInt(item){
+        if (item > 0) {
+            return
+        } else {
+            let sumAll = "ERROR"
+            return sumAll;
+        }
+    };
+    let negNumTest = typeResult.filter(checkPositiveInt);
+
+
 
 };
 
