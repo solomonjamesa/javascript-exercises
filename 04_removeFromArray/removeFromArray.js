@@ -66,10 +66,36 @@ const removeFromArray = function() {
 
           };  
 
+        } else if (filteredArray.length > 2){
+
+          for(i=0;i<filteredArray.length;){
+          
+            let index = testArray.indexOf(filteredArray[i]);
+
+            let removedItem = testArray.splice(index,1); 
+
+            let finalResultArray =function(item){
+                if (item != removedItem){
+                    return true
+                };
+                
+                };
+            let newFilteredArray=[];    
+            newFilteredArray = testArray.filter(finalResultArray); 
+            i++;
+            if (i != filteredArray.length){
+              continue;
+            }else {
+              let removeFromArray = newFilteredArray;
+              return removeFromArray;
+            };
+
+          };  
+
         } else {
           let removeFromArray = "Logic error";
           return removeFromArray;
-        }
+        };
 
     };
   };
