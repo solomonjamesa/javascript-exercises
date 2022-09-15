@@ -21,11 +21,15 @@ const sumAll = function() {
         if( item == "number") {
             return
         } else {
-            let sumAll = "ERROR";
-            return sumAll;
+           return item;
         };
     };
     let typeComparison = typeOfElement.filter(checkTypeOfResult);
+    if (typeComparison.length != 0){
+        let sumAll = "ERROR";
+        return sumAll;
+
+    };
 
     function checkPositiveInt(item){
         if (item > 0) {
@@ -54,12 +58,15 @@ const sumAll = function() {
     }
     let arrayFromMintoMax = range(min,max);
 
-
-
-    
-
-
-
+    function getSum (arrayFromMintoMax){
+        let sumAll = 0;
+        for (let i = 0; i < arrayFromMintoMax.length; i++){
+            sumAll += arrayFromMintoMax[i];
+        }
+        return sumAll;
+       };
+       let sumAll = getSum(arrayFromMintoMax);
+       return sumAll;
 };
 
 // Do not edit below this line
