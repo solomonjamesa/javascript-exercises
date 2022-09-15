@@ -42,11 +42,20 @@ const sumAll = function() {
 
     };
 
-    //Find Max and Min of argArray
+
     let max = Math.max(...argArray);
-    console.log(max);
     let min = Math.min(...argArray);
-    console.log(min);
+    function range(min, max){
+        let arrayFromMintoMax = [];
+        for (let i = min; i <= max; i++){
+            arrayFromMintoMax.push(i);
+        }
+        return arrayFromMintoMax;
+    }
+    let arrayFromMintoMax = range(min,max);
+
+
+
     
 
 
