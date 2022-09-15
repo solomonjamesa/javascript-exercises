@@ -35,13 +35,18 @@ const sumAll = function() {
         }
     };
     let negNumTest = argArray.filter(checkPositiveInt);
-    
-    if (negNumTest != []){
+
+    if (negNumTest.length != 0){
         let sumAll = "ERROR";
-        console.log(sumAll);
         return sumAll;
 
     };
+
+    //Find Max and Min of argArray
+    let max = Math.max(...argArray);
+    console.log(max);
+    let min = Math.min(...argArray);
+    console.log(min);
     
 
 
